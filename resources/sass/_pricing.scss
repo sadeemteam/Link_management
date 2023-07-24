@@ -1,0 +1,48 @@
+@mixin badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pricing {
+    .card {
+        border-radius: 8px;
+
+        .BASIC {
+            @include badge;
+            color: #667085;
+            background: #f2f4f7;
+        }
+        .STANDARD {
+            @include badge;
+            color: #12b76a;
+            background: #ecfdf3;
+        }
+        .PREMIUM {
+            @include badge;
+            color: #2e90fa;
+            background: #eff8ff;
+        }
+        .styled-pricing-list ul li {
+            font-size: 14px;
+            color: #667085;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+        .styled-pricing-list ul li i {
+            margin-right: 8px;
+            color: #2e90fa;
+            cursor: pointer;
+        }
+    }
+}
+
+.form-check.reverse {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    .form-check-label {
+        padding-right: 30px;
+    }
+}

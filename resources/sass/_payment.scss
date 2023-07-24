@@ -1,0 +1,39 @@
+.payment {
+    .frequency {
+        cursor: pointer;
+    }
+    .active-frequency {
+        outline: 2px solid $primary-main;
+    }
+
+    .method {
+        cursor: pointer;
+        height: 100px;
+    }
+    .active-method {
+        outline: 2px solid $primary-main;
+    }
+
+    .order-summery {
+        .summery-header {
+            padding: 16px 20px;
+            border-radius: 8px 8px 0px 0px;
+        }
+        .summery-body {
+            padding: 8px 20px;
+            .body-item {
+                display: flex;
+                justify-content: space-between;
+                .title {
+                    color: $text-disable;
+                }
+            }
+        }
+        .summery-footer {
+            padding: 16px 20px;
+            border-radius: 0px 0px 8px 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

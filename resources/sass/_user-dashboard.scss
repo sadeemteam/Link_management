@@ -1,0 +1,40 @@
+.userDashboard {
+    .overview {
+        padding: 20px;
+        .icon {
+            background: #eff8ff;
+            border-radius: 4px;
+            width: 32px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            i {
+                margin-top: 3px;
+            }
+        }
+        .title {
+            color: $text-disable;
+            padding: 4px 0px;
+            font-weight: 500;
+        }
+        .grauth {
+            color: #12b76a;
+            font-weight: 500;
+        }
+    }
+
+    .footer-card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 24px;
+        .text-box p {
+            color: $text-disable;
+            padding-top: 8px;
+            padding-bottom: 24px;
+        }
+    }
+}

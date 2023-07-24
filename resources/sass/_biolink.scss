@@ -1,0 +1,104 @@
+#bioLink {
+    width: 100%;
+    background: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .socialItem {
+        display: block;
+        background: white;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        padding: 8px;
+        i {
+            margin-right: 4px;
+        }
+    }
+}
+
+// for bio link page style
+.viewBioLink {
+    .linkProfile {
+        margin-bottom: 28px;
+        #linkProfileImg {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+    }
+
+    .mobileViewLinkItem {
+        transition: all 0.15s;
+        #embedButton {
+            display: flex;
+            padding: 14px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .itemIcon {
+            font-size: 24px;
+        }
+        .rightArrow {
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .rightArrow.active {
+            transform: rotate(90deg);
+        }
+        &:hover {
+            transform: translate3d(0px, 0px, 0px) scale(1.01);
+        }
+    }
+}
+
+// for mobile view bio link style
+.mobileLinkContainer {
+    display: flex;
+    justify-content: end;
+    .mobileViewLink {
+        height: 80vh;
+        width: 380px !important;
+        overflow: auto;
+        border-radius: 30px;
+        border: 10px solid black;
+        position: fixed;
+
+        .linkProfileMobile {
+            margin-bottom: 20px;
+            #linkProfileImgMobile {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+        }
+
+        .mobileViewLinkItem {
+            transition: all 0.15s;
+            #embedButton {
+                display: flex;
+                padding: 14px;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .itemIcon {
+                font-size: 24px;
+            }
+            .rightArrow {
+                font-size: 16px;
+                transition: all 0.3s;
+            }
+            .rightArrow.active {
+                transform: rotate(90deg);
+            }
+            &:hover {
+                transform: translate3d(0px, 0px, 0px) scale(1.015);
+            }
+        }
+    }
+}

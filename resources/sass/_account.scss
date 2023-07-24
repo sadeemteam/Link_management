@@ -1,0 +1,47 @@
+.settingForm,
+.appSetting {
+    display: flex;
+    padding: 20px 14px;
+    align-items: center;
+    flex-direction: row;
+    .previewProfile {
+        padding: 0;
+        width: 200px;
+        height: 200px;
+        margin-right: 24px;
+        position: relative;
+        border: 2px solid;
+        border-radius: 50%;
+        overflow: hidden;
+        .form-label {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            bottom: -10px;
+            height: 48px;
+            padding-top: 4px;
+            background: #2e91fae1;
+            color: #f1f1f1;
+            font-weight: 500;
+            cursor: pointer;
+            &:hover {
+                background: #2e90fa;
+                color: #ffffff;
+            }
+        }
+    }
+    .inputBox {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .appSetting {
+        flex-direction: column;
+    }
+    .previewProfile {
+        margin-right: 0;
+    }
+}

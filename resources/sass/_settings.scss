@@ -1,0 +1,42 @@
+.form-switch {
+    // d-flex flex-row ps-0
+    display: flex;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding-left: 0 !important;
+    .form-check-input {
+        width: 3em;
+        height: 1.5em;
+        margin-top: 0;
+    }
+}
+
+.themeContainer {
+    .theme {
+        position: relative;
+        .badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            z-index: 1;
+            display: flex;
+            padding-left: 24px;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            span {
+                background: #2e90fa;
+                font-weight: 400;
+                border-radius: 50px;
+                padding: 2px 4px;
+            }
+
+            .status {
+                width: 60px;
+                select {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

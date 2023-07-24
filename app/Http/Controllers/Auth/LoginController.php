@@ -1,0 +1,55 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\SocialLogin;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+
+class LoginController extends Controller
+{
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+
+    use AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = RouteServiceProvider::DASHBOARD;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(Request $req)
+    {
+        if($req->path() != "logout")
+        {
+            $this->middleware(function ($request, $next) {
+                if (Auth::check()) {
+                    return redirect()->back();
+                }else{
+                    $google = SocialLogin::where('name', 'google')->first();
+                    view()->share('google', $google);
+                    return $next($request);
+                }
+            });
+            $this->middleware('guest')->except('logout');
+        }
+    }
+}

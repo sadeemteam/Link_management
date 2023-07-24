@@ -1,0 +1,16 @@
+.draggable {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+#elementMove {
+    font-size: 22px;
+    margin-right: 12px;
+    cursor: grab;
+}
+
+.draggable.dragging {
+    opacity: 0.5;
+}

@@ -1,0 +1,21 @@
+/*
+ * File: _screen-reader.scss
+ * Project: mylinks
+ * File Created: Tuesday, 14th June 2022 1:11:06 pm
+ * Author: Naime Hossain & ui-lib -> https://ui-lib.com/ (support@ui-lib.com)
+ * -----
+ * Last Modified: Tuesday, 11th October 2022 6:05:50 pm
+ * Modified By: Naime Hossain & ui-lib -> https://ui-lib.com/ (support@ui-lib.com>)
+ * -----
+ * Copyright 2019 - 2022 ui-lib  , ui-lib  ( https://ui-lib.com/ )
+ */
+
+
+// Screen Readers
+// -------------------------
+
+.sr-only { @include sr-only(); }
+.sr-only-focusable { @include sr-only-focusable(); }
+
+
+

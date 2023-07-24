@@ -1,0 +1,207 @@
+body {
+    font-family: "Inter" !important;
+}
+
+#app-navbar {
+    .navbar-nav .nav-link {
+        color: $text-primary;
+    }
+}
+
+.home-header {
+    min-height: 800px;
+    padding-top: 160px;
+    text-align: center;
+    background: url("/assets/header-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @keyframes bookAnimation {
+        0% {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-45px);
+        }
+    }
+    .bannerThumbnail {
+        margin-top: 40px;
+        animation: bookAnimation 2s infinite alternate;
+    }
+
+    h1 {
+        font-size: 70px;
+        text-align: center;
+        margin-bottom: 40px;
+
+        &.slogan-text{
+            background: linear-gradient(to right, #2e90fa 0%, hsl(11deg 100% 62%) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    .linkCreateInput {
+        outline: 1px solid $primary-main;
+        border-radius: 5px;
+        max-width: 570px;
+        width: 100%;
+        padding: 4px;
+        background: white;
+        height: 56px;
+        .linkPrefix {
+            background: white;
+            padding-right: 0px;
+            padding-left: 20px;
+            font-size: 16px;
+        }
+        .form-control {
+            font-size: 16px;
+            padding-left: 0px !important;
+            &:focus {
+                border: none !important;
+                outline: none !important;
+                box-shadow: none !important;
+            }
+        }
+        #submitUsername {
+            font-size: 16px !important;
+            border-radius: 6px;
+            box-shadow: $shadow-main;
+            padding: 10px 24px;
+            margin-right: 1px;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .home-header {
+        padding-top: 80px;
+        min-height: 500px;
+        padding-top: 100px;
+        h1 {
+            font-size: 40px;
+            text-align: center;
+        }
+    }
+}
+
+.features {
+    .card {
+        border: 0;
+        padding: 36px 24px;
+        background: #ffffff;
+        box-shadow: 5px 0px 24px rgba(16, 24, 40, 0.05);
+        border-radius: 8px;
+        i {
+            font-size: 28px;
+            color: $primary-main;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.styled-list li {
+    color: #667085;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    span {
+        margin-right: 8px;
+    }
+}
+
+/* Testimonials styles */
+@media screen and (min-width: 600px) {
+    .splide__slide {
+        padding: 24px 15px;
+        padding-top: 120px;
+    }
+    .splide__slide.is-visible.is-active {
+        padding-top: 60px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .splide__slide {
+        padding: 24px 15px;
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+}
+.styled-card {
+    padding: 24px;
+    text-align: center;
+    box-shadow: 5px 9px 24px rgba(16, 24, 40, 0.05);
+    .customer-img {
+        width: 120px;
+        height: 120px;
+        margin-top: -84px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50%;
+    }
+}
+
+/* pagination of testimonial carousel */
+.splide__arrows {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+.splide__arrows button {
+    padding: 12px;
+    font-size: 18px;
+    transition: all 0.3s;
+    background: #e4e7ec;
+}
+.splide__arrows button:hover {
+    background: #2e90fa;
+}
+.splide__arrow--prev {
+    left: -2.5em !important;
+}
+.splide__arrow--next {
+    right: -2.5em !important;
+}
+
+.splide__pagination {
+    display: none !important;
+}
+
+/* Footer style */
+.footer {
+    background: #f2f4f7;
+}
+.styled-icon {
+    display: flex;
+    align-items: center;
+}
+.styled-icon a {
+    color: #98a2b3;
+    font-size: 16px;
+    margin-right: 16px;
+}
+
+.home-section-edit {
+    position: relative;
+    border: 1px solid;
+    border-style: dashed;
+    .editIcon {
+        color: $primary-main;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 6px;
+        z-index: 100;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    // .contentSection {
+    //     padding-left: 30px;
+    //     .editIcon {
+    //         font-size: 24px;
+    //         top: 4px;
+    //         left: 0px;
+    //     }
+    // }
+}
