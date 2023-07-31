@@ -43,7 +43,7 @@
 </style>
 
 <body>
-    <div 
+    <div
         id="bioLink"
         class="mobileViewLink"
         style="
@@ -54,14 +54,14 @@
     >
         <div>
             <div class="linkProfileMobile">
-                <img 
+                <img
                     alt=""
-                    id="linkProfileImgMobile" 
-                    src="{{$link->thumbnail ? asset($link->thumbnail) : asset('assets/user-profile.png')}}" 
+                    id="linkProfileImgMobile"
+                    src="{{$link->thumbnail ? asset($link->thumbnail) : asset('assets/user-profile.png')}}"
                 >
                 <h5 class="mt-2 textContent">{{$link->link_name}}</h5>
                 <p class="py-2 textContent">{{$link->short_bio}}</p>
-                
+
                 <div class="d-flex justify-content-center" style="flex-wrap: wrap" >
                     @if($link->socials)
                         <?php
@@ -105,7 +105,7 @@
                     @endif
                 </div>
             </div>
-    
+
             <div>
                 @foreach($link->items as $item)
                     <div class="text-center mb-3">
@@ -113,71 +113,71 @@
                         $type = $item->item_type;
                         $sub_type = $item->item_sub_type;
                     ?>
-    
+
                     @if($type == 'Image' || $type == 'Embed Link')
                         <div class="mobileViewLinkItem" style="{{$buttonStyle}}">
-                            <div 
+                            <div
                                 role="button"
                                 id="embedButton"
-                                aria-expanded="false" 
-                                data-bs-toggle="collapse" 
-                                href="#embedLInkItem{{$item->id}}" 
+                                aria-expanded="false"
+                                data-bs-toggle="collapse"
+                                href="#embedLInkItem{{$item->id}}"
                                 onclick="embedButton({{$item->id}})"
                             >
                                 <i class="customThemeColor itemIcon textContent {{$item->item_icon}}"></i>
                                 <h6 class="customThemeColor textContent">
                                     {{$item->item_title}}
                                 </h6>
-    
-                                <i 
-                                    id="rightArrow{{$item->id}}" 
+
+                                <i
+                                    id="rightArrow{{$item->id}}"
                                     class="customThemeColor itemIcon textContent rightArrow fa-solid fa-angle-right"
                                 ></i>
                             </div>
-    
+
                             <div class="collapse" id="embedLInkItem{{$item->id}}">
                                 <div class="pt-0" style="padding: 14px; background: transparent;">
                                     <div class="card" style="overflow: hidden;">
                                         @if($sub_type == "TikTok")
                                             <?php
-                                                $str_arr = explode ("/", $item->item_content); 
+                                                $str_arr = explode ("/", $item->item_content);
                                                 $videoId = array_pop($str_arr);
                                             ?>
-                                            <blockquote 
-                                                class="tiktok-embed" 
-                                                cite="{{$item->item_content}}" 
-                                                data-video-id="{{$videoId}}" 
+                                            <blockquote
+                                                class="tiktok-embed"
+                                                cite="{{$item->item_content}}"
+                                                data-video-id="{{$videoId}}"
                                                 style="width: 100%; height: auto;"
                                             >
                                                 <script async src="https://www.tiktok.com/embed.js"></script>
                                             </blockquote>
-            
+
                                         @elseif($sub_type == "Image")
                                             <img width="100%" src="{{asset($item->content)}}" alt="">
-            
+
                                         @else
-                                            <iframe 
-                                                width="100%" 
-                                                height="200" 
-                                                frameborder="0" 
+                                            <iframe
+                                                width="100%"
+                                                height="200"
+                                                frameborder="0"
                                                 allowfullscreen
-                                                src="{{$item->item_link}}" 
+                                                src="{{$item->item_link}}"
                                             ></iframe>
                                         @endif
                                     </div>
                                 </div>
                             </div>
                         </div>
-    
+
                     @elseif($type == 'Text Content')
                         @if($item->item_sub_type == 'paragraph')
                             <div class="mobileViewLinkItem" style="{{$buttonStyle}}">
-                                <div 
+                                <div
                                     role="button"
                                     id="embedButton"
-                                    aria-expanded="false" 
-                                    data-bs-toggle="collapse" 
-                                    href="#embedLInkItem{{$item->id}}" 
+                                    aria-expanded="false"
+                                    data-bs-toggle="collapse"
+                                    href="#embedLInkItem{{$item->id}}"
                                     onclick="embedButton({{$item->id}})"
                                 >
                                     <i class="textContent itemIcon {{$item->item_icon}}"></i>
@@ -187,10 +187,10 @@
                                     <i id="rightArrow{{$item->id}}" class="textContent rightArrow fa-solid fa-angle-right"
                                     ></i>
                                 </div>
-    
-                                <div 
-                                    class="collapse" 
-                                    id="embedLInkItem{{$item->id}}" 
+
+                                <div
+                                    class="collapse"
+                                    id="embedLInkItem{{$item->id}}"
                                 >
                                     <div class="pt-0" style="padding: 14px; background: transparent;">
                                         <div class="card border-0" style="overflow: hidden;">
@@ -199,19 +199,19 @@
                                     </div>
                                 </div>
                             </div>
-                        @else 
+                        @else
                             <{{$item->item_sub_type}} class="textContent">
                                 {{$item->item_title}}
                             </{{$item->item_sub_type}}>
                         @endif
-    
+
                     @elseif($type == 'Link')
                         <div class="mobileViewLinkItem" style="{{$buttonStyle}}">
                             <div class="linkItemContent" style="padding: 14px;">
-                                <a 
+                                <a
                                     target="_blank"
                                     class="d-flex justify-content-between align-items-center text-decoration-none"
-                                    href="/{{$item->item_link}}" 
+                                    href="/{{$item->item_link}}"
                                 >
                                     <i class="customThemeColor itemIcon textContent {{$item->item_icon}}"></i>
                                     <h6 class="customThemeColor textContent">
@@ -227,14 +227,7 @@
             </div>
         </div>
 
-        <div>
-            <img 
-                width="40px" 
-                style="border-radius: 6px" 
-                id="bioLinkLogoMobile"
-                src="{{asset($link->branding)}}" alt=""
-            >
-        </div>
+
     </div>
 
     <script>
